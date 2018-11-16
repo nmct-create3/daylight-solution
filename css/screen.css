@@ -1,0 +1,533 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: "Work Sans Web";
+    font-weight: 400;
+    src: url("../fonts/WorkSans-Regular.woff2") format("woff2")
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* colors */
+    --color-light: hsla(208,100%,90%,1);
+    --color-dark: hsla(208,70%,20%,1);
+
+    --color-front: var(--color-dark);
+    --color-back: var(--color-light);
+
+    /* opacity */
+    --muted-opacity: .6;
+
+    /* transitions */
+    --transition-duration: 1.5s;
+    --transition-easing: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Work Sans Web", Helvetica, arial, sans-serif;
+    color: var(--color-front);
+    background-color: var(--color-back);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "zero" 1;
+    transition-property: color, background-color;
+    transition-duration: calc(var(--transition-duration) / 2);
+    transition-timing-function: var(--transition-easing);
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: var(--color-front);
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--color-front);
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    transition: all var(--transition-alpha);
+    color: var(--color-front);
+    outline-color: var(--color-front);
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+    color: var(--color-front);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-front);
+}
+
+label,
+input {
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+    margin-bottom: 48px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+/*
+    Component: Sun
+    ---
+    The sun
+*/
+
+.c-sun {
+    width: 22px;
+    height: 22px;
+    fill: var(--color-front);
+    transition-property: fill;
+    transition-duration: calc(var(--transition-duration) / 2);
+    transition-timing-function: var(--transition-easing);
+}
+
+.c-logo .c-sun {
+    margin-right: 8px;
+}
+
+/*
+    Component: App
+    ---
+    Main app wrapper
+*/
+
+.c-app {
+    margin: 0 auto;
+    max-width: 29em;
+    min-height: 100vh;
+    padding: 32px 32px 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.c-app__summary {
+    font-size: 28px;
+    line-height: 40px;
+    opacity: 0;
+    transform: translateY(22px);
+    transition-property: opacity;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-easing);
+}
+
+.is-loaded .c-app__summary {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.c-app__location {
+    opacity: 0;
+    transform: translateY(22px);
+    transition-property: opacity;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-easing);
+}
+
+.is-loaded .c-app__location {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*
+    Component: Horizon
+    ---
+    Horizon with sun visualisation
+*/
+
+.c-horizon {
+    margin-top: auto;
+}
+
+.c-horizon__sky-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    padding: 22px 40px 0 0;
+}
+
+.c-horizon__sky {
+    position: relative;
+    height: 100%;
+}
+
+.c-horizon__sun {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    transform: translateY(22px);
+    transform: translateY(30px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-easing);
+    transition-delay: calc(var(--transition-duration) / 5);
+}
+
+.is-loaded .c-horizon__sun {
+    opacity: 1;
+    transform: translateY(22px);
+}
+
+.c-horizon__sun::before {
+    content: attr(data-time);
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+}
+
+.c-horizon__line {
+    border-top: 1px solid var(--color-front);
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(22px);
+    transition-property: opacity, border-color;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-easing);
+}
+
+.is-loaded .c-horizon__line {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.c-horizon__time {
+    font-size: 12px;
+    line-height: 14px;
+
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: Mute
+    Mute with opacity
+*/
+
+.u-muted {
+    opacity: var(--muted-opacity);
+}
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+/*
+    Change the theme using CSS vars.
+*/
+
+/* Night version: just switch the light and dark vars */
+
+.is-night {
+    --color-front: var(--color-light);
+    --color-back: var(--color-dark);
+}
+
+/* optional */
+
+.is-dawn {
+    --color-front: hsla(1,50%,40%,1);
+    --color-back: hsla(36,90%,75%,1);
+}
+
+.is-dusk {
+    --color-front: hsla(213,30%,15%,1);
+    --color-back: hsla(213,15%,60%,1);
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

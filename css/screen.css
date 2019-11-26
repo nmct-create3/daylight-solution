@@ -47,7 +47,6 @@ html {
     transition-property: color, background-color;
     transition-duration: calc(var(--transition-duration) / 2);
     transition-timing-function: var(--transition-easing);
-
 }
 
 *,
@@ -305,13 +304,12 @@ input::placeholder {
 */
 
 body {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(auto, 29em);
     justify-content: center;
 }
 
 .c-app {
-    /* margin: 0 auto; */
-    max-width: 29em;
     min-height: 100vh;
     padding: 32px 32px 8px;
     display: flex;

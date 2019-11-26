@@ -2,11 +2,7 @@
 #FONTS
 \*------------------------------------*/
 
-@font-face {
-    font-family: "Work Sans Web";
-    font-weight: 400;
-    src: url("../fonts/WorkSans-Regular.woff2") format("woff2")
-}
+/* Fonts are loaded via Google fonts */
 
 /*------------------------------------*\
 #Variables
@@ -41,7 +37,7 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Work Sans Web", Helvetica, arial, sans-serif;
+    font-family: "Work Sans", Helvetica, arial, sans-serif;
     color: var(--color-front);
     background-color: var(--color-back);
     box-sizing: border-box;
@@ -280,6 +276,7 @@ input::placeholder {
     display: flex;
     -ms-align-items: center;
     align-items: center;
+    margin-bottom: auto;
 }
 
 /*
@@ -307,13 +304,19 @@ input::placeholder {
     Main app wrapper
 */
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .c-app {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     max-width: 29em;
     min-height: 100vh;
     padding: 32px 32px 8px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 }
 
 .c-app__summary {
@@ -351,7 +354,7 @@ input::placeholder {
 */
 
 .c-horizon {
-    margin-top: auto;
+    /* margin-top: auto; */
 }
 
 .c-horizon__sky-wrapper {

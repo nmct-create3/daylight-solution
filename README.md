@@ -1,2 +1,2 @@
-# Create 3 labo 1
-This is the solution for labo 1 of Create 3.
+# Interaction Design Daylight Exercise
+This is the solution for the Daylight exercise.
